@@ -167,6 +167,15 @@
 # print(num_list)
 # print(string_list)
 
+user_input = input('Enter user inputs with delimiter ","')
+input_list = list(user_input.split(','))
+
+num_list = [item for item in input_list if item.isnumeric()]
+string_list = [item for item in input_list if not item.isnumeric()]
+print(num_list)
+print(string_list)
+
+
 
 
 

@@ -154,9 +154,6 @@
 
 
 
-
-
-#
 # user_input = input('Enter user inputs with delimiter ","')
 # input_list = list(user_input.split(','))
 # filtered_values = []
@@ -173,13 +170,6 @@
 
 
 
-def isfloat(value):
-    try:
-        float(value)
-        return True
-
-    except ValueError:
-        return False
 
 def isint(value):
     try:
@@ -189,13 +179,22 @@ def isint(value):
     except ValueError:
         return False
 
+def isNumber(value):
+    try:
+        float(value)
+        return True
+
+    except ValueError:
+        return False
+
+
 user_input = input('Enter user inputs with delimiter ","')
 input_list = list(user_input.split(','))
 
 num_list = []
 string_list = []
 for item in input_list:
-        if isint(item) or isfloat(item):
+        if isNumber(item):
             num_list.append(item)
         else:
             string_list.append(item)

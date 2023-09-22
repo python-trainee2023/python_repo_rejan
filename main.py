@@ -145,35 +145,66 @@
 #
 # print(num_list[len(num_list)-1])
 
-#
-# user_input = input('Enter user inputs with delimiter ","')
-# input_list = list(user_input.split(','))
+
 #
 # num_list = [item for item in input_list if isinstance(item, int) or isinstance(item,float)]
 # string_list = [item for item in input_list if isinstance(item,str)]
 # print(num_list)
 # print(string_list)
 
-# num_list = []
-# string_list = []
-# for item in input_list:
-#     if(isinstance(item, int) or isinstance(item, float)):
-#         num_list.append(item)
-#     elif(isinstance(item, str)):
-#         string_list.append(item)
-#     else:
-#         continue
+
+
+
+
 #
+# user_input = input('Enter user inputs with delimiter ","')
+# input_list = list(user_input.split(','))
+# filtered_values = []
+#
+# try:
+#     filtered_values = filter(lambda x: isfloat(x), input_list)
+# except ValueError:
+#     print('Value error')
+
+# num_list = [item for item in input_list if item.isnumeric()]
+# string_list = [item for item in input_list if not item.isnumeric()]
 # print(num_list)
 # print(string_list)
+
+
+
+def isfloat(value):
+    try:
+        float(value)
+        return True
+
+    except ValueError:
+        return False
+
+def isint(value):
+    try:
+        int(value)
+        return True
+
+    except ValueError:
+        return False
 
 user_input = input('Enter user inputs with delimiter ","')
 input_list = list(user_input.split(','))
 
-num_list = [item for item in input_list if item.isnumeric()]
-string_list = [item for item in input_list if not item.isnumeric()]
+num_list = []
+string_list = []
+for item in input_list:
+        if isint(item) or isfloat(item):
+            num_list.append(item)
+        else:
+            string_list.append(item)
+
 print(num_list)
 print(string_list)
+
+
+
 
 
 

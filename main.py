@@ -145,27 +145,97 @@
 #
 # print(num_list[len(num_list)-1])
 
-#
-# user_input = input('Enter user inputs with delimiter ","')
-# input_list = list(user_input.split(','))
+
 #
 # num_list = [item for item in input_list if isinstance(item, int) or isinstance(item,float)]
 # string_list = [item for item in input_list if isinstance(item,str)]
 # print(num_list)
 # print(string_list)
 
+
+
+# user_input = input('Enter user inputs with delimiter ","')
+# input_list = list(user_input.split(','))
+# filtered_values = []
+#
+# try:
+#     filtered_values = filter(lambda x: isfloat(x), input_list)
+# except ValueError:
+#     print('Value error')
+
+# num_list = [item for item in input_list if item.isnumeric()]
+# string_list = [item for item in input_list if not item.isnumeric()]
+# print(num_list)
+# print(string_list)
+
+
+
+
+# def isint(value):
+#     try:
+#         int(value)
+#         return True
+#
+#     except ValueError:
+#         return False
+
+# def isNumber(value):
+#     try:
+#         float(value)
+#         return True
+#
+#     except ValueError:
+#         return False
+#
+#
+# user_input = input('Enter user inputs with delimiter ","')
+# input_list = list(user_input.split(','))
+#
 # num_list = []
 # string_list = []
 # for item in input_list:
-#     if(isinstance(item, int) or isinstance(item, float)):
-#         num_list.append(item)
-#     elif(isinstance(item, str)):
-#         string_list.append(item)
-#     else:
-#         continue
+#         if isNumber(item):
+#             num_list.append(item)
+#         else:
+#             string_list.append(item)
 #
 # print(num_list)
 # print(string_list)
+
+
+#
+# user_input = input('user input')
+#
+# try:
+#     resp = (lambda val : int(val) ** 3)(user_input)
+#     print(resp)
+# except ValueError:
+#     print('Invalid number!')
+
+
+
+# factorail
+def factorial(num):
+    fact= 1
+    for i in range(1, num+1):
+        fact *= i
+    return fact
+
+
+# fibo series
+def fiboSeries(num):
+    a=1
+    b=1
+    c=a+b
+    print(a)
+    print (b)
+    for i in range(3, num + 1):
+        print(c)
+        a=b
+        b=c
+        c=a+b
+
+fiboSeries(10)
 
 
 

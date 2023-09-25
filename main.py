@@ -203,15 +203,39 @@
 # print(string_list)
 
 
+#
+# user_input = input('user input')
+#
+# try:
+#     resp = (lambda val : int(val) ** 3)(user_input)
+#     print(resp)
+# except ValueError:
+#     print('Invalid number!')
 
-user_input = input('user input')
 
-try:
-    resp = (lambda val : int(val) ** 3)(user_input)
-    print(resp)
-except ValueError:
-    print('Invalid number!')
 
+# factorail
+def factorial(num):
+    fact= 1
+    for i in range(1, num+1):
+        fact *= i
+    return fact
+
+
+# fibo series
+def fiboSeries(num):
+    a=1
+    b=1
+    c=a+b
+    print(a)
+    print (b)
+    for i in range(3, num + 1):
+        print(c)
+        a=b
+        b=c
+        c=a+b
+
+fiboSeries(10)
 
 
 

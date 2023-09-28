@@ -2,7 +2,7 @@ class Animal:
     def __init__(self, wild):
         self.wild = wild
 
-    def makeSound(self):
+    def make_sound(self):
         pass
 
 
@@ -11,7 +11,7 @@ class Dog(Animal):
         super().__init__(wild)
         self.name = name
 
-    def makeSound(self):
+    def make_sound(self):
         print(f"Hi I am {self.name}. I am not {'not wild' if not self.wild else 'wild'}")
         print("I bark")
 
@@ -21,7 +21,7 @@ class Cat(Animal):
         super().__init__(wild)
         self.name = name
 
-    def makeSound(self):
+    def make_sound(self):
         print(f"Hi I am {self.name}. I am not {'not wild' if not self.wild else 'wild'}")
         print("I meow")
 
@@ -29,5 +29,5 @@ class Cat(Animal):
 dog = Dog(False, 'Bruno')
 cat = Cat(True, 'Wild Cat')
 
-dog.makeSound()
-cat.makeSound()
+dog.make_sound()
+cat.make_sound()

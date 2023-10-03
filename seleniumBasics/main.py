@@ -1,5 +1,7 @@
+from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+
 
 class BaseClass:
     def __init__(self):
@@ -11,6 +13,7 @@ class BaseClass:
 
     def teardown(self):
         self.driver.close()
+
 
 class SauceDemo(BaseClass):
     def __init__(self):
@@ -36,13 +39,15 @@ class SauceDemo(BaseClass):
     def inputText(self, locator, text):
         self.driver.find_element(*locator).send_keys(text)
 
+
 # Instantiate the SauceDemo class
 loginDemo = SauceDemo()
 
 try:
     loginDemo.setup()
-    loginDemo.login("saucedemo", "secretsauce")
+    loginDemo.login("standard_user", "secret_sauce")
 except Exception as e:
     print(e)
 finally:
+    sleep(5)
     loginDemo.teardown()
